@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Blank Page</title>
+    <title>Pronto Soluciones</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -21,15 +21,19 @@
       define('SERVER', "http://" . $_SERVER['SERVER_NAME'] . ":8080/sistema/");
     }
     // Acceso por IP
-    if ($_SERVER['SERVER_NAME']=='direccionIp') {
-      // define('SERVER', "http://" . $_SERVER['direccionIp'] . "/sistema/");
-      define('SERVER', "http://direccionIp/" );
-    }
+    // // if ($_SERVER['SERVER_NAME']=='direccionIp') {
+    // if ($_SERVER['SERVER_NAME']=='prontosoluciones.000webhostapp.com') {
+    //   // define('SERVER', "http://" . $_SERVER['direccionIp'] . "/sistema/");
+    //   define('SERVER', "http://prontosoluciones.000webhostapp.com/" );
+    // }
     // Acceso por nombre de dominio
-    if ($_SERVER['SERVER_NAME']=='nombreDominio') {
+    // if ($_SERVER['SERVER_NAME']=='nombreDominio') {
+    if ($_SERVER['SERVER_NAME']=='prontosoluciones.000webhostapp.com') {
       // define('SERVER', "http://" . $_SERVER['nombreDominio'] );
-      define('SERVER', "http://nombreDominio/" );
+      define('SERVER', "https://prontosoluciones.000webhostapp.com/" );
     }
+
+    // prontosoluciones.000webhostapp.com
   ?>
 
     <!-- Bootstrap 3.3.7 -->
@@ -62,11 +66,11 @@
 
         <header class="main-header">
             <!-- Logo -->
-            <a href="../../index2.html" class="logo">
+            <a href="<?php echo SERVER ?>modulos/contacto/contacto.php" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>LT</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg">Pronto Soluciones</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -95,7 +99,7 @@
                                             <!-- start message -->
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="<?php echo SERVER ?>img/user2-160x160.jpg"
+                                                    <img src="<?php echo SERVER ?>img/gonzalo_sian.png"
                                                         class="img-circle" alt="User Image">
                                                 </div>
                                                 <h4>
@@ -170,19 +174,19 @@
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="<?php echo SERVER ?>img/user2-160x160.jpg" class="user-image"
+                                <img src="<?php echo SERVER ?>img/gonzalo_sian.png" class="user-image"
                                     alt="User Image">
-                                <span class="hidden-xs">Alexander Pierce</span>
+                                <span class="hidden-xs">Gonzalo Sian</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="<?php echo SERVER ?>img/user2-160x160.jpg" class="img-circle"
+                                    <img src="<?php echo SERVER ?>img/gonzalo_sian.png" class="img-circle"
                                         alt="User Image">
 
                                     <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        Gonzalo Sian - Web Developer
+                                        <small>Member since Nov. 2020</small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -229,10 +233,10 @@
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="<?php echo SERVER ?>img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="<?php echo SERVER ?>img/gonzalo_sian.png" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p>Gonzalo Sian</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
@@ -479,9 +483,9 @@
 
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
-                <b>Version</b> 2.4.0
+                <b>Version</b> 1.0.0
             </div>
-            <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+            <strong>Copyright &copy; 2020 <a href="https://adminlte.io">Pronto Soluciones</a>.</strong> All rights
             reserved.
         </footer>
 

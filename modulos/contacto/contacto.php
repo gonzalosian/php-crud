@@ -3,27 +3,57 @@
   require_once("../../header.php");
   // require_once("encabezado.php");
   // require_once("lateral.php");
+
+  
+    // *********** acceso a traves del puerto por defecto (80) **********
+    // Acceso a traves del puerto por defecto 80
+    if (($_SERVER['SERVER_NAME']=='localhost') AND ($_SERVER['SERVER_PORT']=='80')){
+      define('SERVER', "http://" . $_SERVER['SERVER_NAME'] . "/sistema/");
+    };
+    // Acceso a traves del puerto 8080
+    if (($_SERVER['SERVER_NAME']=='localhost') AND ($_SERVER['SERVER_PORT']=='8080')){
+      define('SERVER', "http://" . $_SERVER['SERVER_NAME'] . ":8080/sistema/");
+    };
+    // Acceso por nombre de dominio
+    if ($_SERVER['SERVER_NAME']=='prontosoluciones.000webhostapp.com') {
+      define('SERVER', "https://prontosoluciones.000webhostapp.com/" );
+    };
 ?>
 
-<script type="text/javascript" language="javascript" >
+<script type="text/javascript" language="javascript">
 // metodo para cargar el formulario
 $("body").on('submit', '#formDefault', function(event) {
-    event.preventDefault()
-    if($('#formDefault').valid()) {
+
+    event.preventDefault();
+
+    if ($('#formDefault').valid()) {
+
         $('#barra').show();
+
         $.ajax({
             type: "POST",
             url: "contactoAjax.php",
             dataType: "json",
             data: $(this).serialize(),
-            success: function (respuesta) {
+            success: function(respuesta) {
+
                 $('#barra').hide();
-                if(respuesta.error == 1){
+
+                if (respuesta.error == 1) {
                     $('#error').show();
                     setTimeout(() => {
                         $('#error').hide();
                     }, 3000);
-                }
+                };
+
+                if (respuesta.exito == 1) {
+                    $('#mensaje').show();
+                    $('#contactForm').hide();
+                    $('#contactFormExitoso').show();
+                    setTimeout(() => {
+                        $('#mensaje').hide();
+                    }, 3000);
+                };
             }
         })
     }
@@ -71,7 +101,7 @@ $("body").on('submit', '#formDefault', function(event) {
                                         <h4 class="list-group-item-heading">
 
                                             <!-- <form role="form"> -->
-                                            <<form class=" form-horizontal " id="formDefault" >
+                                            <form class=" form-horizontal " id="formDefault">
                                                 <div class="control-group-inline" style=" padding-top:10px ">
                                                     <!-- <label>
                                                     Nombre
@@ -88,24 +118,39 @@ $("body").on('submit', '#formDefault', function(event) {
                                                 </div>
                                                 <div class="control-group-inline"
                                                     style=" padding-top:10px; padding-bottom:10px ">
-                                                    <!-- <label>
-                                                    Teléfono
-                                                </label> -->
+                                                    <!-- <label>Teléfono</label> -->
                                                     <input type="text" class="form-control" id="telefono"
                                                         name="telefono" maxlenght="15" placeholder="Telefono"
                                                         title="Telefono" />
                                                 </div>
                                                 <!-- <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" /> Check me out
-                                                </label>
-                                            </div> -->
+                                                <label><input type="checkbox" /> Check me out</label>
+                                                </div> -->
                                                 <button type="button" class="btn btn-default">Cancelar</button>
                                                 <button type="submit" class="btn btn-primary pull-right "
                                                     title="Enviar los datos">
                                                     Enviar
                                                 </button>
                                             </form>
+
+                                            <div class="control-group-inline"
+                                                style=" text-align: center; display:none; margin-top: 20px;" id="barra">
+                                                <img src="<?php echo SERVER ?>img/barra.gif" alt="Cargando..."
+                                                    style=" width: 200px "><br>
+                                                Enviando mensaje...
+                                            </div>
+
+                                            <div class=" alert alert-success mensaje_form "
+                                                style=" display: none; margin-top: 20px;" id="mensaje">
+                                                <button data-dismiss="alert" class="close" type="button">x</button>
+                                                <span class="textmensaje">¡Datos enviados satisfactoriamente!</span>
+                                            </div>
+
+                                            <div class=" alert alert-danger mensaje_form "
+                                                style=" display: none; margin-top: 20px;" id="error">
+                                                <button data-dismiss="alert" class="close" type="button">x</button>
+                                                <span class="textmensaje">No se pudo enviar el mensaje</span>
+                                            </div>
 
                                         </h4>
                                     </div>

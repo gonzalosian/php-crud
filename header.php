@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Blank Page</title>
+    <title>Pronto Soluciones</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -21,15 +21,19 @@
       define('SERVER', "http://" . $_SERVER['SERVER_NAME'] . ":8080/sistema/");
     }
     // Acceso por IP
-    if ($_SERVER['SERVER_NAME']=='direccionIp') {
-      // define('SERVER', "http://" . $_SERVER['direccionIp'] . "/sistema/");
-      define('SERVER', "http://direccionIp/" );
-    }
+    // if ($_SERVER['SERVER_NAME']=='direccionIp') {
+    //   // define('SERVER', "http://" . $_SERVER['direccionIp'] . "/sistema/");
+    //   define('SERVER', "http://direccionIp/" );
+    // }
     // Acceso por nombre de dominio
-    if ($_SERVER['SERVER_NAME']=='nombreDominio') {
-      // define('SERVER', "http://" . $_SERVER['nombreDominio'] );
-      define('SERVER', "http://nombreDominio/" );
-    }
+    // if ($_SERVER['SERVER_NAME']=='nombreDominio') {
+    //   // define('SERVER', "http://" . $_SERVER['nombreDominio'] );
+    //   define('SERVER', "http://nombreDominio/" );
+    // }
+
+    if ($_SERVER['SERVER_NAME']=='prontosoluciones.000webhostapp.com') {
+      define('SERVER', "https://prontosoluciones.000webhostapp.com/" );
+    };
   ?>
 
     <!-- Bootstrap 3.3.7 -->
