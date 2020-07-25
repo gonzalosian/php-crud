@@ -1,3 +1,8 @@
+<?php 
+// Módulo de contacto consulta
+require_once("../../header.php");
+?>
+
 <!-- =============================================== -->
 
 <!-- Content Wrapper. Contains page content -->
@@ -23,17 +28,48 @@
             <div class="box-header with-border">
                 <h3 class="box-title">Title</h3>
 
-                <div class="box-tools pull-right">
+                <!-- <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                         title="Collapse">
                         <i class="fa fa-minus"></i></button>
                     <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip"
                         title="Remove">
                         <i class="fa fa-times"></i></button>
-                </div>
+                </div> -->
             </div>
             <div class="box-body">
-                Start creating your amazing application!
+<!-- Contenido de la tabla -->
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+<!-- Fin contenido de la tabla -->
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
@@ -47,3 +83,6 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<?php 
+  require_once("../../footer.php");
+?>

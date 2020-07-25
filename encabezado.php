@@ -1,8 +1,8 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="../../index2.html" class="logo">
+    <a href="<?php echo SERVER ?>modulos/contacto/contacto.php" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
+        <span class="logo-mini"><b>PS</b></span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg">Pronto Soluciones</span>
     </a>
@@ -109,7 +109,7 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?php echo SERVER ?>img/gonzalo_sian.png" class="user-image" alt="User Image">
-                        <span class="hidden-xs">Gonzalo Sian</span>
+                        <span class="hidden-xs">Usuario</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -142,7 +142,19 @@
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+
+                                <?php
+                                    if (!isset($_SESSION['status'])) {
+                                ?>
+                                <a href="<?php echo SERVER ?>modulos/login/login.php" class="btn btn-default btn-flat">Login</a>
+                                <?php
+                                    } else{
+                                ?>
+                                <a href="<?php echo SERVER ?>modulos/login/logout.php" class="btn btn-default btn-flat">Sign out</a>
+                                <?php
+                                }
+                                ?>
+
                             </div>
                         </li>
                     </ul>

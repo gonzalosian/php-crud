@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -8,33 +12,14 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <?php  
-    // *********** acceso a traves del puerto por defecto (80) **********
-    # aqui va el comentario
-    /* este es otro comentario */
-    // Acceso a traves del puerto por defecto 80
-    if (($_SERVER['SERVER_NAME']=='localhost') AND ($_SERVER['SERVER_PORT']=='80')){
-      define('SERVER', "http://" . $_SERVER['SERVER_NAME'] . "/sistema/");
-    }
-    // Acceso a traves del puerto 8080
-    if (($_SERVER['SERVER_NAME']=='localhost') AND ($_SERVER['SERVER_PORT']=='8080')){
-      define('SERVER', "http://" . $_SERVER['SERVER_NAME'] . ":8080/sistema/");
-    }
-    // Acceso por IP
-    // if ($_SERVER['SERVER_NAME']=='direccionIp') {
-    //   // define('SERVER', "http://" . $_SERVER['direccionIp'] . "/sistema/");
-    //   define('SERVER', "http://direccionIp/" );
-    // }
-    // Acceso por nombre de dominio
-    // if ($_SERVER['SERVER_NAME']=='nombreDominio') {
-    //   // define('SERVER', "http://" . $_SERVER['nombreDominio'] );
-    //   define('SERVER', "http://nombreDominio/" );
-    // }
+    <?php
+      require_once('ruta.php');
+    ?>
 
-    if ($_SERVER['SERVER_NAME']=='prontosoluciones.000webhostapp.com') {
-      define('SERVER', "https://prontosoluciones.000webhostapp.com/" );
-    };
-  ?>
+    <link rel="shortcut icon" href="<?php echo SERVER ?>img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo SERVER ?>img/favicon.ico" type="image/x-icon">
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="<?php echo SERVER ?>css/bootstrap.min.css">
@@ -48,10 +33,17 @@
        folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?php echo SERVER ?>css/_all-skins.min.css">
 
+
+    <!-- Todas estas lineas podrian ir al final, en el footer, pero como lo tenemos separado, 
+se requiere cargue antes para no haya problemas con el JQuery de contactos.php -->
     <!-- jQuery 3 -->
     <script src="<?php echo SERVER ?>js/jquery.min.js"></script>
+    <!-- <script src="<?php echo SERVER ?>js/fastclick.js"></script> -->
     <!-- AdminLTE App -->
-    <script src="<?php echo SERVER ?>js/adminlte.min.js"></script>
+    <!-- <script src="<?php echo SERVER ?>js/adminlte.min.js"></script> -->
+    <!-- <script src="<?php echo SERVER ?>js/bootbox.min.js"></script> -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -63,6 +55,24 @@
     <!-- Google Font -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <style>
+    input.error {
+        background-color: #E2E8EB;
+        border: 1px solid red;
+        border-radius: 11px;
+        outline: 20px;
+    }
+
+    .redondeado {
+        border-radius: 11px;
+        box-shadow: 0px 9px 9px rgba(0, 0, 0, 0.3);
+        -moz-border-radius: 11px;
+        -moz-box-shadow: 0px 9px 9px rgba(0, 0, 0, 0.3);
+        -webkit-border-radius: 11px;
+        -webkit-box-shadow: 0px 9px 9px rgba(0, 0, 0, 0.3);
+    }
+    </style>
 
 </head>
 

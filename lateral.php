@@ -9,7 +9,7 @@
                   <img src="<?php echo SERVER ?>img/gonzalo_sian.png" class="img-circle" alt="User Image">
               </div>
               <div class="pull-left info">
-                  <p>Gonzalo Sian</p>
+                  <p>Usuario: </p>
                   <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
               </div>
           </div>
@@ -27,20 +27,21 @@
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu" data-widget="tree">
-              <li class="header">MAIN NAVIGATION</li>
+              <li class="header">MENU PRINCIPAL</li>
               <li class="treeview">
                   <a href="#">
-                      <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                      <i class="fa fa-dashboard"></i> <span>Módulos</span>
                       <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
                       </span>
                   </a>
                   <ul class="treeview-menu">
-                      <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                      <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                      <li><a href="<?php echo SERVER ?>modulos/contacto/contacto.php"><i class="fa fa-circle-o"></i> Contacto</a></li>
+                      <li><a href="<?php echo SERVER ?>modulos/contacto/contactoConsulta.php"><i class="fa fa-circle-o"></i> Listado de contactos</a></li>
+                      <li><a href="<?php echo SERVER ?>modulos/login/login.php"><i class="fa fa-circle-o"></i> Login</a></li>
                   </ul>
               </li>
-              <li class="treeview">
+              <!-- <li class="treeview">
                   <a href="#">
                       <i class="fa fa-files-o"></i>
                       <span>Layout Options</span>
@@ -196,7 +197,7 @@
               <li class="header">LABELS</li>
               <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
               <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-              <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+              <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li> -->
           </ul>
       </section>
       <!-- /.sidebar -->
