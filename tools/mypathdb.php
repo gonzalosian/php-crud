@@ -5,10 +5,10 @@ $userName = "webmaster";
 $password = "G0nzal0S1an@";
 
 // LOCAL
-$dbName = "sistema";
+// $dbName = "sistema";
 
 // SERVER
-// $dbName = "id14004081_sistema";
+$dbName = "id14004081_sistema";
 
 // Crear la conexión web
 $conn = mysqli_connect( $serverName, $userName, $password, $dbName );
