@@ -41,9 +41,22 @@ se requiere cargue antes para no haya problemas con el JQuery de contactos.php -
     <!-- <script src="<?php echo SERVER ?>js/fastclick.js"></script> -->
     <!-- AdminLTE App -->
     <!-- <script src="<?php echo SERVER ?>js/adminlte.min.js"></script> -->
-    <!-- <script src="<?php echo SERVER ?>js/bootbox.min.js"></script> -->
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="<?php echo SERVER ?>js/bootbox.min.js"></script>
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> -->
+    <script src="<?php echo SERVER ?>js/jquery.validate.min.js"></script>
 
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+    <link rel="stylesheet" href="<?php echo SERVER ?>css/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+    <script src="<?php echo SERVER ?>js/jquery-ui.js"></script>
+
+<!-- Para grilla mas profesional -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"> -->
+    <link rel="stylesheet" href="<?php echo SERVER ?>css/jquery.dataTables.css">
+    <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script> -->
+    <script src="<?php echo SERVER ?>js/jquery.dataTables.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

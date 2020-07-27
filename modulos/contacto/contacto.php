@@ -1,23 +1,9 @@
 <?php 
 // Módulo de contacto
   require_once("../../header.php");
-  
-    // *********** acceso a traves del puerto por defecto (80) **********
-    // Acceso a traves del puerto por defecto 80
-    if (($_SERVER['SERVER_NAME']=='localhost') AND ($_SERVER['SERVER_PORT']=='80')){
-      define('SERVER', "http://" . $_SERVER['SERVER_NAME'] . "/sistema/");
-    };
-    // Acceso a traves del puerto 8080
-    if (($_SERVER['SERVER_NAME']=='localhost') AND ($_SERVER['SERVER_PORT']=='8080')){
-      define('SERVER', "http://" . $_SERVER['SERVER_NAME'] . ":8080/sistema/");
-    };
-    // Acceso por nombre de dominio
-    if ($_SERVER['SERVER_NAME']=='prontosoluciones.000webhostapp.com') {
-      define('SERVER', "https://prontosoluciones.000webhostapp.com/" );
-    };
 ?>
 
-<!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> -->
+<!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> -->
 <!-- <script src="<?php echo SERVER ?>js/jquery.validate.min.js"></script> -->
 
 <script type="text/javascript" language="javascript">

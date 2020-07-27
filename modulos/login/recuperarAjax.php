@@ -3,16 +3,20 @@
 // var_dump($_REQUEST);
 // exit();
 
+// Consultar los datos en la tabla de usuarios 
+require_once('../../tools/mypathdb.php');
+require_once('../../ruta.php');
+require_once('../../tools/eliminarComillas.php');
+
 // Módulo AJAX para recuperar clave de usuario
 $usuario = strtolower($_POST['usuario']);
+// ELIMINAR ATAQUES POR INJECCIÓN
+$usuario = eliminarComillas($usuario);
 
 // Para evaluar unicamente el nombre
 // var_dump($usuario);
 // exit();
 
-// Consultar los datos en la tabla de usuarios 
-require_once('../../tools/mypathdb.php');
-require_once('../../ruta.php');
 
 // Consultar los datos en la tabla de usuarios
 $sql = " SELECT * FROM usuarios WHERE usuario='$usuario' ";

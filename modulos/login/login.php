@@ -1,23 +1,9 @@
 <?php 
 // Módulo de Login
   require_once("../../header.php");
-  
-    // *********** acceso a traves del puerto por defecto (80) **********
-    // Acceso a traves del puerto por defecto 80
-    if (($_SERVER['SERVER_NAME']=='localhost') AND ($_SERVER['SERVER_PORT']=='80')){
-      define('SERVER', "http://" . $_SERVER['SERVER_NAME'] . "/sistema/");
-    };
-    // Acceso a traves del puerto 8080
-    if (($_SERVER['SERVER_NAME']=='localhost') AND ($_SERVER['SERVER_PORT']=='8080')){
-      define('SERVER', "http://" . $_SERVER['SERVER_NAME'] . ":8080/sistema/");
-    };
-    // Acceso por nombre de dominio
-    if ($_SERVER['SERVER_NAME']=='prontosoluciones.000webhostapp.com') {
-      define('SERVER', "https://prontosoluciones.000webhostapp.com/" );
-    };
 ?>
 
-<!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> -->
+<!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> -->
 <!-- <script src="<?php echo SERVER ?>js/jquery.validate.min.js"></script> -->
 
 <script type="text/javascript" language="javascript">
@@ -57,6 +43,13 @@ $("body").on('submit', '#formDefault', function(event) {
                     $('#error3').show();
                     setTimeout(function() {
                         $('#error3').hide();
+                    }, 3000);
+                }
+
+                if (respuesta.error == 4) {
+                    $('#error4').show();
+                    setTimeout(function() {
+                        $('#error4').hide();
                     }, 3000);
                 }
 
@@ -209,27 +202,6 @@ $("body").on('submit', '#formDefault', function(event) {
                                         </h4>
                                     </div>
                                 </section>
-
-                                <!-- <section id="loginFormExitoso" style="display:none; padding-bottom: 20px">
-                                    <div class="container-fluid" style="background-image: url(../../img/email.png); background-size: cover; 
-                                        background-position: right; width: 530px; height: 400px">
-                                        <div>
-                                            <div id="confirm">
-                                                <br><br><br><br><br><br>
-                                                <font color="#000000" size="+2"> Gracias por registrarse.<br>
-                                                    Por favor, revise su correo electrónico y haga click<br>
-                                                    en el enlace que le enviamos para verificación de su cuenta.<br><br>
-                                                </font>
-                                                <font color="#000000" size="+1">Es posible que el correo se
-                                                    encuentre<br>
-                                                    dentro de la bandeja de spam.<br><br><br>
-                                                    El equipo de sistema web<br>
-                                                </font>
-                                                <br><br><br><br><br><br>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section> -->
 
                                 <section id="loginFormExitoso" style="display: none; padding-bottom: 20px">
                                     <!-- <div class="container-fluid" style="background-image: url(../../img/email.png);

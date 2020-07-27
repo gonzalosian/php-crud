@@ -16,6 +16,16 @@ include("../../header.php");
 require_once('../../tools/mypathdb.php');
 ?>
 
+<script type="text/javascript" language="JavaScript">
+  $(document).ready(function() {  
+    //permite conocer cual es la fila seleccionada de la tabla
+    var table = $('#example1').DataTable(); 
+    $('#example1 tbody').on( 'click', 'tr', function () {
+      data=table.row( this ).index(); 
+      var info = table.page.info(); //obtengo el numero de pagina.      
+    } );    
+  }); 
+</script>
 <!-- =============================================== -->
 
 <!-- Content Wrapper. Contains page content -->
@@ -44,7 +54,7 @@ require_once('../../tools/mypathdb.php');
 
             <div class="box-body">
                 <!-- Contenido de la tabla -->
-                <table class="table table-striped">
+                <table id="example1" class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -83,9 +93,9 @@ require_once('../../tools/mypathdb.php');
                 <!-- Fin contenido de la tabla -->
             </div>
             <!-- /.box-body -->
-            <div class="box-footer">
+            <!-- <div class="box-footer">
                 Footer
-            </div>
+            </div> -->
             <!-- /.box-footer-->
         </div>
         <!-- /.box -->

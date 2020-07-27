@@ -7,12 +7,24 @@
     reserved.
 </footer>
 
+<script>
+    $(function(){
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+            'paging': true,
+            'lengthChange': false,
+            'searching': false,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
+        })
+    })
+</script>
+
 <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 3 -->
-<!-- <script src="<?php echo SERVER ?>js/jquery.min.js"></script> -->
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo SERVER ?>js/bootstrap.min.js"></script>
 <!-- SlimScroll -->

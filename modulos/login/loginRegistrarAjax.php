@@ -3,25 +3,35 @@
 // var_dump($_REQUEST);
 // exit();
 
+//  Introducir los datos en la tabla de usuarios 
+require_once('../../tools/mypathdb.php');
+require_once('../../ruta.php');
+require_once('../../tools/eliminarComillas.php');
+
 $nombre = utf8_decode($_POST['nombre']);
 $usuario = strtolower($_POST['usuario']);
 $clave = $_POST['clave'];
+
+// ELIMINAR ATAQUES POR INJECCIÓN
+$nombre = eliminarComillas($nombre);
+$usuario = eliminarComillas($usuario);
+$clave = eliminarComillas($clave);
 
 // Para evaluar unicamente el nombre
 // var_dump($nombre);
 // exit();
 
-//  Introducir los datos en la tabla de usuarios 
-require_once('../../tools/mypathdb.php');
-require_once('../../ruta.php');
 
 // Creamos un PIN de 4 dígitos aleatorio para la confirmación del usuario
 mt_srand(time());
 $pin = mt_rand(1000,9999);
 
 // Introducir los datos en la tabla de usuarios
-$sql = " INSERT INTO usuarios (nombre, usuario, clave, pin)
-VALUES ('" . $nombre . "', '" . $usuario . "', '" . $clave . "', '" . $pin . "')";
+$fechaDesde = date("Y-m-d");
+$fechaHasta = date("Y-m-d", strtotime($fechaDesde."+ 30 days") );
+
+$sql = " INSERT INTO usuarios (nombre, usuario, clave, pin, fechaDesde, fechaHasta)
+VALUES ('" . $nombre . "', '" . $usuario . "', '" . $clave . "', '" . $pin . "', '" . $fechaDesde . "', '" . $fechaHasta . "')";
 
 // var_dump($sql);
 // exit();
@@ -86,6 +96,9 @@ if(mysqli_query( $conn, $sql )) {
 
     // Envío de información a AJAX
     $data = array("exito" => '1');
+
+    // var_dump($data);
+    // exit();
 
     // En contacto.php cuando creamos el JSON, definimos el data, que es por donde viaja la información.
     die(json_encode($data));

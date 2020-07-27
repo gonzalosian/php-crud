@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="<?php echo SERVER ?>modulos/contacto/contacto.php" class="logo">
+    <a href="<?php echo SERVER ?>index.php" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>PS</b></span>
         <!-- logo for regular state and mobile devices -->

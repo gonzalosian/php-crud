@@ -1,14 +1,17 @@
 <?php
 // Conexión a la DB
+
+// LOCAL
 $serverName = "localhost";
 $userName = "webmaster";
 $password = "G0nzal0S1an@";
-
-// LOCAL
-// $dbName = "sistema";
+$dbName = "sistema";
 
 // SERVER
-$dbName = "id14004081_sistema";
+// $serverName = "localhost";
+// $userName = "id14004081_webmaster";
+// $password = "G0nzal0S1an@";
+// $dbName = "id14004081_sistema";
 
 // Crear la conexión web
 $conn = mysqli_connect( $serverName, $userName, $password, $dbName );
